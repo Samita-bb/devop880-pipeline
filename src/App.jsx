@@ -11,7 +11,7 @@ function App() {
         <p className="small">
           Written by Samita Pongcharoen
         </p>
-        <h1>I love devop</h1>
+        <h1>Up date by</h1>
           <p>
           <a
             className="App-link"
