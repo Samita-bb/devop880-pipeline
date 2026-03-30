@@ -4,14 +4,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
+        <img src="KU_Logo.png" className="App-logo" alt="logo" />
         <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
+          IC/CD Pipeline for React Web app
         </p>
         <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
+          Written by Samita Pongcharoen
         </p>
-        <p>
+        <h1>I love devop</h1>
+          <p>
           <a
             className="App-link"
             href="https://reactjs.org"
