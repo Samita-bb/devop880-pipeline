@@ -1,5 +1,6 @@
 name: React App CI/CD 
 
+# Workflow จะทำงานเมื่อมีการ Push ไปที่ branch 'main'
 on: 
   push: 
     branches:
@@ -26,7 +27,7 @@ jobs:
         with: 
           context: . 
           push: true 
-          # ตรวจสอบว่า Samita-bb คือ username จริงใน Docker Hub
+          # ใช้ชื่อ samitabb (ตัวพิมพ์เล็ก) เป็นมาตรฐาน
           tags: samitabb/devop880-pipeline:latest 
       
   deploy: 
@@ -39,9 +40,17 @@ jobs:
           host: ${{ secrets.SERVER_HOST }} 
           username: ${{ secrets.SERVER_USER }} 
           key: ${{ secrets.SERVER_SSH_KEY }} 
+          port: 22
           script: | 
-            # ใช้ชื่อ image ให้ตรงกับตอน build (แนะนำตัวพิมพ์เล็กทั้งหมด)
+            # 1. ดึง Image ล่าสุดลงมา
             docker pull samitabb/devop880-pipeline:latest
+            
+            # 2. หยุดและลบ Container เดิม (ถ้ามี) โดยไม่ทำให้ Workflow พังถ้าไม่เจอ Container
             docker stop my-react-app || true 
             docker rm my-react-app || true 
+            
+            # 3. รัน Container ใหม่
             docker run -d --name my-react-app -p 80:80 samitabb/devop880-pipeline:latest
+            
+            # 4. ลบ Image เก่าๆ ที่ไม่ได้ใช้เพื่อประหยัดพื้นที่เซิร์ฟเวอร์
+            docker image prune -f
