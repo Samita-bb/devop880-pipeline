@@ -12,10 +12,10 @@ function App() {
           Written by Samita Pongcharoen Narakorn Choocherd
  
 Nichanat Sakhonnoi
-  <img src="lmage.jpg" style={{ width: '400px' }} />
+  <img src="Image.jpg" style={{ width: '400px' }} />
         </p>
         <h1>I love devop</h1>
-          <p>
+        <p>
           <a
             className="App-link"
             href="https://reactjs.org"
