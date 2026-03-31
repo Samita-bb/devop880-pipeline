@@ -9,9 +9,12 @@ function App() {
           IC/CD Pipeline for React Web app
         </p>
         <p className="small">
-          Written by Samita Pongcharoen
+          Written by Samita Pongcharoen Narakorn Choocherd
+ 
+Nichanat Sakhonnoi
+ 
         </p>
-        <h1>Up date by</h1>
+        <h1>I love devop</h1>
           <p>
           <a
             className="App-link"
