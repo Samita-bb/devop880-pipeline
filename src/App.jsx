@@ -12,7 +12,7 @@ function App() {
           Written by Samita Pongcharoen Narakorn Choocherd
  
 Nichanat Sakhonnoi
-  <img src="lmage.jpg" className="App-logo" alt="logo" />
+  <img src="lmage.jpg" style={{ width: '400px' }} />
         </p>
         <h1>I love devop</h1>
           <p>
